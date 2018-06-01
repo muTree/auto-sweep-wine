@@ -3,7 +3,7 @@ import time
 import win32gui, win32api, win32con
 import random
 from win_mouse import *
-debug = 0
+debug = False
 from copy import deepcopy
 
 class sl:
@@ -32,10 +32,10 @@ class sl:
               ]
     
     def __init__(self):
-        if debug:
-            print("Intializing...")
-        for i in range(13):
-            self.imgs[i] = Image.open("sources/" + str(i) + ".bmp")
+        pass
+        #print("Intializing...")
+        #for i in range(13):
+            #self.imgs[i] = Image.open("sources/" + str(i) + ".bmp")
     def getWindowInfo(self):
         if debug:
             print("get window info")
@@ -254,6 +254,7 @@ class sl:
                             continue
         if self.guessBlock():
             return True
+        #随机选择
         allb10 = self.getallb10()
         length = len(allb10)
         pos = allb10[random.randint(0, length-1)]
